@@ -1,0 +1,7 @@
+NovitecCamera Class
+===================
+
+.. autoclass:: NovitecCameraAPIWrapper.NovitecCamera
+   :members:
+   :undoc-members:
+   :show-inheritance:

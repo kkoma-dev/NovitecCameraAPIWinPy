@@ -1,0 +1,73 @@
+Connect Camera
+===============================
+
+.. code-block:: python
+
+    import sys
+
+    from NovitecCameraAPIWinPy import NovitecCamera
+
+
+    def get_device_index_from_user() -> int:
+        while True:
+            try:
+                index = int(input("Enter the device index to connect: "))
+                if index >= 0:
+                    return index
+                else:
+                    print("Please enter a non-negative integer.")
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+
+
+    def print_device_info(index, info):
+        is_network_compatible = "Yes" if info.isNetworkCompatible else "No"
+
+        print(f"Device {index}:")
+        print(f"  Model Name        : {info.modelName.decode().strip()}")
+        print(f"  Serial Number     : {info.serialNumber.decode().strip()}")
+        print(f"  Firmware Version  : {info.firmwareVersion.decode().strip()}")
+        print(f"  MAC Address       : {':'.join(f'{b:02x}' for b in info.macAddress)}")
+        print(f"  IP Address        : {'.'.join(str(b) for b in info.ipAddress)}")
+        print(f"  Subnet Mask       : {'.'.join(str(b) for b in info.subnetMask)}")
+        print(f"  Default Gateway   : {'.'.join(str(b) for b in info.defaultGateway)}")
+        print(f"  Network Compatible: {is_network_compatible}")
+
+
+    # Create an instance of the NovitecCamera class
+    novitec_camera = NovitecCamera()
+
+    # Discover available devices
+    ret, num_of_device = novitec_camera.discover()
+    if ret.errCode != 0:
+        print(f"Error discovering devices: {ret.errMessage}")
+        sys.exit()
+
+    print(f"Number of devices discovered: {num_of_device}")
+
+    # Iterate over each discovered device and print its information
+    for device_index in range(num_of_device):
+        ret, device_info = novitec_camera.get_device_info(device_index)
+        if ret.errCode != 0:
+            print(f"Error retrieving information for device {device_index}: {ret.errMessage}")
+        else:
+            print_device_info(device_index, device_info)
+
+    # Prompt the user to select a device index to connect
+    device_index = get_device_index_from_user()
+
+    # Fetch the information for the selected device
+    ret, device_info = novitec_camera.get_device_info(device_index)
+    if ret.errCode != 0:
+        print(f"Error fetching information for the selected device {device_index}: {ret.errMessage}")
+        sys.exit()
+    else:
+        serial_number = device_info.serialNumber.decode().strip()
+
+    # Connect to the device using its serial number
+    ret = novitec_camera.connect_by_serial_number(serial_number)
+    if ret.errCode != 0:
+        print(f"Connection failed for the device with serial number {serial_number}: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"Connection successful for the device with serial number {serial_number}")

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovitecCameraAPIWinPy Reference &mdash; NovitecCameraAPIWinPy  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/novitec.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Example Code" href="examples/examples.html" />
+    <link rel="prev" title="Welcome to NovitecCameraAPIWinPy’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NovitecCameraAPIWinPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NovitecCameraAPIWinPy Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#NovitecCameraAPIWinPy.CallBackDisconnect"><code class="docutils literal notranslate"><span class="pre">CallBackDisconnect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.modelName"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.modelName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.serialNumber"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.serialNumber</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.firmwareVersion"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.firmwareVersion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.macAddress"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.macAddress</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.ipAddress"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.ipAddress</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.subnetMask"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.subnetMask</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.defaultGateway"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.defaultGateway</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.isNetworkCompatible"><code class="docutils literal notranslate"><span class="pre">DiscoverDeviceInfo.isNetworkCompatible</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError"><code class="docutils literal notranslate"><span class="pre">CError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError.errCode"><code class="docutils literal notranslate"><span class="pre">CError.errCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError.errMessage"><code class="docutils literal notranslate"><span class="pre">CError.errMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage"><code class="docutils literal notranslate"><span class="pre">CImage</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.width"><code class="docutils literal notranslate"><span class="pre">CImage.width</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.height"><code class="docutils literal notranslate"><span class="pre">CImage.height</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.bpp"><code class="docutils literal notranslate"><span class="pre">CImage.bpp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.timestamp"><code class="docutils literal notranslate"><span class="pre">CImage.timestamp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.frameNum"><code class="docutils literal notranslate"><span class="pre">CImage.frameNum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.payloadType"><code class="docutils literal notranslate"><span class="pre">CImage.payloadType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.pixelFormat"><code class="docutils literal notranslate"><span class="pre">CImage.pixelFormat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.dataSize"><code class="docutils literal notranslate"><span class="pre">CImage.dataSize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage.data"><code class="docutils literal notranslate"><span class="pre">CImage.data</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera"><code class="docutils literal notranslate"><span class="pre">NovitecCamera</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.connect_by_serial_number"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.connect_by_serial_number()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.disconnect"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.disconnect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.discover"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.discover()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.execute_feature"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.execute_feature()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_device_info"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_device_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_min_max_value_float"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_feature_min_max_value_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_min_max_value_int"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_feature_min_max_value_int()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_enum"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_feature_value_enum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_float"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_feature_value_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_int"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_feature_value_int()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_string"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_feature_value_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.get_image"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.get_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.send_force_ip"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.send_force_ip()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.set_device_disconnect_event_callback"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.set_device_disconnect_event_callback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_enum"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.set_feature_value_enum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_float"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.set_feature_value_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_int"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.set_feature_value_int()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_string"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.set_feature_value_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.start"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.stop"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NovitecCameraAPIWinPy.NovitecCamera.write_memory"><code class="docutils literal notranslate"><span class="pre">NovitecCamera.write_memory()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Example Code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/connect_camera.html">Connect Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/control_camera.html">Control Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/capture_image.html">Capture Image</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NovitecCameraAPIWinPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">NovitecCameraAPIWinPy Reference</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="noviteccameraapiwinpy-reference">
+<h1>NovitecCameraAPIWinPy Reference<a class="headerlink" href="#noviteccameraapiwinpy-reference" title="Link to this heading"></a></h1>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CallBackDisconnect">
+<span class="sig-prename descclassname"><span class="pre">NovitecCameraAPIWinPy.</span></span><span class="sig-name descname"><span class="pre">CallBackDisconnect</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CallBackDisconnect" title="Link to this definition"></a></dt>
+<dd><p>CallBackDisconnect is a ctypes function type for device disconnect event callbacks.</p>
+<p>This type defines a callback function that takes a single void pointer argument and returns nothing.
+It is used to specify the signature of the callback functions that can be registered with
+the SetDeviceDisconnectEventCallback method.</p>
+<p>The callback function should match this type to ensure compatibility with the underlying C library.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The callback function should match this type to ensure compatibility with the underlying C library.
+Failure to do so may result in undefined behavior or crashes. Always ensure that the callback function
+signature is compatible with <cite>CallBackDisconnect</cite>.</p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">NovitecCameraAPIWinPy.</span></span><span class="sig-name descname"><span class="pre">DiscoverDeviceInfo</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>Structure representing discovered device information.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.modelName">
+<span class="sig-name descname"><span class="pre">modelName</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.modelName" title="Link to this definition"></a></dt>
+<dd><p>Model name of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes (32 bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.serialNumber">
+<span class="sig-name descname"><span class="pre">serialNumber</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.serialNumber" title="Link to this definition"></a></dt>
+<dd><p>Serial number of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes (16 bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.firmwareVersion">
+<span class="sig-name descname"><span class="pre">firmwareVersion</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.firmwareVersion" title="Link to this definition"></a></dt>
+<dd><p>Firmware version of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes (32 bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.macAddress">
+<span class="sig-name descname"><span class="pre">macAddress</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.macAddress" title="Link to this definition"></a></dt>
+<dd><p>MAC address of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes (6 bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.ipAddress">
+<span class="sig-name descname"><span class="pre">ipAddress</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.ipAddress" title="Link to this definition"></a></dt>
+<dd><p>IP address of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes (4 bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.subnetMask">
+<span class="sig-name descname"><span class="pre">subnetMask</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.subnetMask" title="Link to this definition"></a></dt>
+<dd><p>Subnet mask of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes (4 bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.defaultGateway">
+<span class="sig-name descname"><span class="pre">defaultGateway</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.defaultGateway" title="Link to this definition"></a></dt>
+<dd><p>Default gateway of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes (4 bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.DiscoverDeviceInfo.isNetworkCompatible">
+<span class="sig-name descname"><span class="pre">isNetworkCompatible</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo.isNetworkCompatible" title="Link to this definition"></a></dt>
+<dd><p>Network compatibility status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool (1 byte)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_device_info</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Model Name        : </span><span class="si">{</span><span class="n">info</span><span class="o">.</span><span class="n">modelName</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Serial Number     : </span><span class="si">{</span><span class="n">info</span><span class="o">.</span><span class="n">serialNumber</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Firmware Version  : </span><span class="si">{</span><span class="n">info</span><span class="o">.</span><span class="n">firmwareVersion</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  MAC Address       : </span><span class="si">{</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">02x</span><span class="si">}</span><span class="s1">&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">info</span><span class="o">.</span><span class="n">macAddress</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  IP Address        : </span><span class="si">{</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">info</span><span class="o">.</span><span class="n">ipAddress</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Subnet Mask       : </span><span class="si">{</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">info</span><span class="o">.</span><span class="n">subnetMask</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Default Gateway   : </span><span class="si">{</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">info</span><span class="o">.</span><span class="n">defaultGateway</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">is_network_compatible</span> <span class="o">=</span> <span class="s2">&quot;Yes&quot;</span> <span class="k">if</span> <span class="n">info</span><span class="o">.</span><span class="n">isNetworkCompatible</span> <span class="k">else</span> <span class="s2">&quot;No&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Network Compatible: </span><span class="si">{</span><span class="n">is_network_compatible</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">NovitecCameraAPIWinPy.</span></span><span class="sig-name descname"><span class="pre">CError</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>Structure representing an error.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>On success, the <code class="docutils literal notranslate"><span class="pre">errCode</span></code> will be 0.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CError.errCode">
+<span class="sig-name descname"><span class="pre">errCode</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CError.errCode" title="Link to this definition"></a></dt>
+<dd><p>Error code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CError.errMessage">
+<span class="sig-name descname"><span class="pre">errMessage</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CError.errMessage" title="Link to this definition"></a></dt>
+<dd><p>Error message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>char *</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">NovitecCameraAPIWinPy.</span></span><span class="sig-name descname"><span class="pre">CImage</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>Structure representing an image.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.width" title="Link to this definition"></a></dt>
+<dd><p>Image width.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.height" title="Link to this definition"></a></dt>
+<dd><p>Image height.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.bpp">
+<span class="sig-name descname"><span class="pre">bpp</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.bpp" title="Link to this definition"></a></dt>
+<dd><p>Bits per pixel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.timestamp">
+<span class="sig-name descname"><span class="pre">timestamp</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.timestamp" title="Link to this definition"></a></dt>
+<dd><p>Timestamp of the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>unsigned int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.frameNum">
+<span class="sig-name descname"><span class="pre">frameNum</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.frameNum" title="Link to this definition"></a></dt>
+<dd><p>Frame number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>unsigned int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.payloadType">
+<span class="sig-name descname"><span class="pre">payloadType</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.payloadType" title="Link to this definition"></a></dt>
+<dd><p>Payload type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.pixelFormat">
+<span class="sig-name descname"><span class="pre">pixelFormat</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.pixelFormat" title="Link to this definition"></a></dt>
+<dd><p>Pixel format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.dataSize">
+<span class="sig-name descname"><span class="pre">dataSize</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.dataSize" title="Link to this definition"></a></dt>
+<dd><p>Size of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>unsigned int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.CImage.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.CImage.data" title="Link to this definition"></a></dt>
+<dd><p>Pointer to the image data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>POINTER(c_ubyte)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">NovitecCameraAPIWinPy.</span></span><span class="sig-name descname"><span class="pre">NovitecCamera</span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for controlling Novitec cameras.</p>
+<p>This class provides methods to interact with and control Novitec cameras.
+Key functionalities include device discovery, connection, control, start and stop operations,
+and image capture.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.connect_by_serial_number">
+<span class="sig-name descname"><span class="pre">connect_by_serial_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.connect_by_serial_number" title="Link to this definition"></a></dt>
+<dd><p>Connects to a device using its serial number.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">discover()</span></code> function must be called before.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>serial_number</strong> (<em>str</em>) – The serial number of the device to connect to.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the connection operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.disconnect" title="Link to this definition"></a></dt>
+<dd><p>Disconnects from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the disconnect operation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.discover">
+<span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.discover" title="Link to this definition"></a></dt>
+<dd><p>Discovers devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing the result of the discovery operation and the number of devices found.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.execute_feature">
+<span class="sig-name descname"><span class="pre">execute_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.execute_feature" title="Link to this definition"></a></dt>
+<dd><p>Executes a feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to execute.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the execute operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_device_info">
+<span class="sig-name descname"><span class="pre">get_device_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo" title="NovitecCameraAPIWinPy.DiscoverDeviceInfo"><span class="pre">DiscoverDeviceInfo</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_device_info" title="Link to this definition"></a></dt>
+<dd><p>Retrieves device information by index.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">discover()</span></code> function must be called before.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_index</strong> (<em>int</em>) – The index of the device to retrieve information for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the result of the operation and the device information.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, <a class="reference internal" href="#NovitecCameraAPIWinPy.DiscoverDeviceInfo" title="NovitecCameraAPIWinPy.DiscoverDeviceInfo">DiscoverDeviceInfo</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_feature_min_max_value_float">
+<span class="sig-name descname"><span class="pre">get_feature_min_max_value_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_min_max_value_float" title="Link to this definition"></a></dt>
+<dd><p>Gets the minimum and maximum values of a float feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to get the min and max values for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the result of the get operation and the min and max float values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, float, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_feature_min_max_value_int">
+<span class="sig-name descname"><span class="pre">get_feature_min_max_value_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_min_max_value_int" title="Link to this definition"></a></dt>
+<dd><p>Gets the minimum and maximum values of an integer feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to get the min and max values for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the result of the get operation and the min and max integer values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_enum">
+<span class="sig-name descname"><span class="pre">get_feature_value_enum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_enum" title="Link to this definition"></a></dt>
+<dd><p>Gets an enum feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to get.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the result of the get operation and the enum value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_float">
+<span class="sig-name descname"><span class="pre">get_feature_value_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_float" title="Link to this definition"></a></dt>
+<dd><p>Gets a float feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to get.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the result of the get operation and the float value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_int">
+<span class="sig-name descname"><span class="pre">get_feature_value_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_int" title="Link to this definition"></a></dt>
+<dd><p>Gets an integer feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to get.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the result of the get operation and the integer value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_string">
+<span class="sig-name descname"><span class="pre">get_feature_value_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_feature_value_string" title="Link to this definition"></a></dt>
+<dd><p>Gets a string feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to get.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the result of the get operation and the string value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.get_image">
+<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#NovitecCameraAPIWinPy.CImage" title="NovitecCameraAPIWinPy.CImage"><span class="pre">CImage</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.get_image" title="Link to this definition"></a></dt>
+<dd><p>Get an image from the frame buffer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">start()</span></code> function must be called before.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing the result of the operation and the image.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[<a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a>, <a class="reference internal" href="#NovitecCameraAPIWinPy.CImage" title="NovitecCameraAPIWinPy.CImage">CImage</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.send_force_ip">
+<span class="sig-name descname"><span class="pre">send_force_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.send_force_ip" title="Link to this definition"></a></dt>
+<dd><p>Sends a Force IP command.</p>
+<p>Sends a command to change the device’s IP information.
+This feature is used to set a random IP in the same range as the PC’s network IP when the device and PC network IP ranges do not match.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">discover()</span></code> function must be called before.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_index</strong> (<em>int</em>) – The index of the device to which the command is sent.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the connection operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.set_device_disconnect_event_callback">
+<span class="sig-name descname"><span class="pre">set_device_disconnect_event_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback_disconnect:</span> <span class="pre">~ctypes.CFUNCTYPE.&lt;locals&gt;.CFunctionType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.set_device_disconnect_event_callback" title="Link to this definition"></a></dt>
+<dd><p>Sets the callback function for device disconnect events.</p>
+<p>This method registers a callback function that will be called whenever the device
+is disconnected. The callback function must match the signature defined by
+<cite>CallBackDisconnect</cite>, which takes a single void pointer argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback_disconnect</strong> (<em>CallBackDisconnect</em>) – The callback function to be called when the device disconnects. This function
+should be defined to match the <cite>CallBackDisconnect</cite> type signature.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the operation, indicating whether the callback was successfully
+registered. The specific error codes and their meanings should be referred to
+in the library’s documentation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">disconnect_callback</span><span class="p">(</span><span class="n">param</span><span class="p">:</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Device disconnected:&quot;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">set_device_disconnect_event_callback</span><span class="p">(</span><span class="n">CallBackDisconnect</span><span class="p">(</span><span class="n">disconnect_callback</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="n">CError</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Callback set successfully&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to set callback, error code:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The callback function should match this type to ensure compatibility with the underlying C library.
+Failure to do so may result in undefined behavior or crashes. Always ensure that the callback function
+signature is compatible with <cite>CallBackDisconnect</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_enum">
+<span class="sig-name descname"><span class="pre">set_feature_value_enum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_enum" title="Link to this definition"></a></dt>
+<dd><p>Sets an enum feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to set.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The enum value to set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the set operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_float">
+<span class="sig-name descname"><span class="pre">set_feature_value_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_float" title="Link to this definition"></a></dt>
+<dd><p>Sets a float feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to set.</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – The float value to set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the set operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_int">
+<span class="sig-name descname"><span class="pre">set_feature_value_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_int" title="Link to this definition"></a></dt>
+<dd><p>Sets an integer feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to set.</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – The integer value to set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the set operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_string">
+<span class="sig-name descname"><span class="pre">set_feature_value_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.set_feature_value_string" title="Link to this definition"></a></dt>
+<dd><p>Sets a string feature value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_name</strong> (<em>str</em>) – The name of the feature to set.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The string value to set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the set operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.start" title="Link to this definition"></a></dt>
+<dd><p>Start grabbing images from a camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the start operation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.stop" title="Link to this definition"></a></dt>
+<dd><p>Stop grabbing images from a camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the stop operation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NovitecCameraAPIWinPy.NovitecCamera.write_memory">
+<span class="sig-name descname"><span class="pre">write_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError"><span class="pre">CError</span></a></span></span><a class="headerlink" href="#NovitecCameraAPIWinPy.NovitecCamera.write_memory" title="Link to this definition"></a></dt>
+<dd><p>Write memory to device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>int</em>) – The address to write to.</p></li>
+<li><p><strong>data</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, or </em><em>bytes</em>) – The data to write.</p></li>
+<li><p><strong>length</strong> (<em>int</em>) – The length of the data to write.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the write operation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#NovitecCameraAPIWinPy.CError" title="NovitecCameraAPIWinPy.CError">CError</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to NovitecCameraAPIWinPy’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples/examples.html" class="btn btn-neutral float-right" title="Example Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, kkomadev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

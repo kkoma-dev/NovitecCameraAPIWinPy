@@ -1,0 +1,7 @@
+CError Class
+============
+
+.. autoclass:: NovitecCameraAPIWrapper.CError
+   :members:
+   :undoc-members:
+   :show-inheritance:

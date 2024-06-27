@@ -1,0 +1,25 @@
+NovitecCameraAPIWinPy Reference
+==========================================
+
+.. autoclass:: NovitecCameraAPIWinPy.CallBackDisconnect
+   :members:
+   :show-inheritance:
+
+.. autoclass:: NovitecCameraAPIWinPy.DiscoverDeviceInfo
+   :members:
+   :show-inheritance:
+
+
+.. autoclass:: NovitecCameraAPIWinPy.CError
+   :members:
+   :show-inheritance:
+
+
+.. autoclass:: NovitecCameraAPIWinPy.CImage
+   :members:
+   :show-inheritance:
+
+
+.. autoclass:: NovitecCameraAPIWinPy.NovitecCamera
+   :members:
+   :show-inheritance:

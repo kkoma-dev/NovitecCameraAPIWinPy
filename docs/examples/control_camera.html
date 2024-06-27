@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Camera &mdash; NovitecCameraAPIWinPy  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="../_static/novitec.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Capture Image" href="capture_image.html" />
+    <link rel="prev" title="Connect Camera" href="connect_camera.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NovitecCameraAPIWinPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">NovitecCameraAPIWinPy Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html">Example Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="connect_camera.html">Connect Camera</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Control Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capture_image.html">Capture Image</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NovitecCameraAPIWinPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="examples.html">Example Code</a></li>
+      <li class="breadcrumb-item active">Control Camera</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="control-camera">
+<h1>Control Camera<a class="headerlink" href="#control-camera" title="Link to this heading"></a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">NovitecCameraAPIWinPy</span> <span class="kn">import</span> <span class="n">NovitecCamera</span>
+
+<span class="c1"># Create an instance of the NovitecCamera class</span>
+<span class="n">novitec_camera</span> <span class="o">=</span> <span class="n">NovitecCamera</span><span class="p">()</span>
+
+<span class="c1"># Discover available devices</span>
+<span class="n">novitec_camera</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
+
+<span class="c1"># Connect to the device using its serial number</span>
+<span class="n">serial_number</span> <span class="o">=</span> <span class="s2">&quot;S3XS0001&quot;</span>  <span class="c1"># Example serial number</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">connect_by_serial_number</span><span class="p">(</span><span class="n">serial_number</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connection failed for the device with serial number </span><span class="si">{</span><span class="n">serial_number</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connection successful for the device with serial number </span><span class="si">{</span><span class="n">serial_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set/Get Examples for Int-Type Features</span>
+<span class="c1"># Set the value of the &quot;ExposureTime&quot; feature to 10000</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">set_feature_value_int</span><span class="p">(</span><span class="s2">&quot;ExposureTime&quot;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to set the &#39;ExposureTime&#39; feature value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="c1"># Get the current value of the &quot;ExposureTime&quot; feature</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">exposure_time</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">get_feature_value_int</span><span class="p">(</span><span class="s2">&quot;ExposureTime&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get the &#39;ExposureTime&#39; feature value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The &#39;ExposureTime&#39; feature value is: </span><span class="si">{</span><span class="n">exposure_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get min/max value Examples for Int-Type Features</span>
+<span class="c1"># Retrieve the minimum and maximum allowable values for the &quot;ExposureTime&quot; feature</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">exposure_time_min</span><span class="p">,</span> <span class="n">exposure_time_max</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">get_feature_min_max_value_int</span><span class="p">(</span><span class="s2">&quot;ExposureTime&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get the &#39;ExposureTime&#39; feature min/max value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The &#39;ExposureTime&#39; feature min/max value is: </span><span class="si">{</span><span class="n">exposure_time_min</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">exposure_time_max</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set/Get Examples for Float-Type Features</span>
+<span class="c1"># Set the value of the &quot;Gain&quot; feature to 2.0</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">set_feature_value_float</span><span class="p">(</span><span class="s2">&quot;Gain&quot;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to set the &#39;Gain&#39; feature value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="c1"># Get the current value of the &quot;Gain&quot; feature</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">gain</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">get_feature_value_float</span><span class="p">(</span><span class="s2">&quot;Gain&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get the &#39;Gain&#39; feature value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The &#39;Gain&#39; feature value is: </span><span class="si">{</span><span class="n">gain</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get min/max value Examples for Float-Type Features</span>
+<span class="c1"># Retrieve the minimum and maximum allowable values for the &quot;Gain&quot; feature</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">gain_min</span><span class="p">,</span> <span class="n">gain_max</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">get_feature_min_max_value_float</span><span class="p">(</span><span class="s2">&quot;Gain&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get the &#39;Gain&#39; feature min/max value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The &#39;Gain&#39; feature min/max value is: </span><span class="si">{</span><span class="n">gain_min</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">gain_max</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set/Get Examples for Enum-Type Features</span>
+<span class="c1"># Set the value of the &quot;TriggerMode&quot; feature to &quot;On&quot;</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">set_feature_value_enum</span><span class="p">(</span><span class="s2">&quot;TriggerMode&quot;</span><span class="p">,</span> <span class="s2">&quot;On&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to set the &#39;TriggerMode&#39; feature value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="c1"># Get the current value of the &quot;TriggerMode&quot; feature</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">trigger_mode</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">get_feature_value_enum</span><span class="p">(</span><span class="s2">&quot;TriggerMode&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get the &#39;TriggerMode&#39; feature value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The &#39;TriggerMode&#39; feature value is: </span><span class="si">{</span><span class="n">trigger_mode</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get Examples for String-Type Features</span>
+<span class="c1"># Get the current value of the &quot;DeviceFirmwareVersion&quot; feature</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">device_firmware_version</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">get_feature_value_string</span><span class="p">(</span><span class="s2">&quot;DeviceFirmwareVersion&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get the &#39;DeviceFirmwareVersion&#39; feature value: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The &#39;DeviceFirmwareVersion&#39; feature value is: </span><span class="si">{</span><span class="n">device_firmware_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Execute Examples for Command-Type Features</span>
+<span class="c1"># Execute the &quot;TriggerSoftware&quot; command feature</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">novitec_camera</span><span class="o">.</span><span class="n">execute_feature</span><span class="p">(</span><span class="s2">&quot;TriggerSoftware&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ret</span><span class="o">.</span><span class="n">errCode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to execute the &#39;TriggerSoftware&#39; feature: </span><span class="si">{</span><span class="n">ret</span><span class="o">.</span><span class="n">errMessage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="connect_camera.html" class="btn btn-neutral float-left" title="Connect Camera" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="capture_image.html" class="btn btn-neutral float-right" title="Capture Image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, kkomadev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

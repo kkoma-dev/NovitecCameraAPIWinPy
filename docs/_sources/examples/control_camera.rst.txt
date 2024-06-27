@@ -1,0 +1,100 @@
+Control Camera
+=========================
+
+.. code-block:: python
+
+    from NovitecCameraAPIWinPy import NovitecCamera
+
+    # Create an instance of the NovitecCamera class
+    novitec_camera = NovitecCamera()
+
+    # Discover available devices
+    novitec_camera.discover()
+
+    # Connect to the device using its serial number
+    serial_number = "S3XS0001"  # Example serial number
+    ret = novitec_camera.connect_by_serial_number(serial_number)
+    if ret.errCode != 0:
+        print(f"Connection failed for the device with serial number {serial_number}: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"Connection successful for the device with serial number {serial_number}")
+
+    # Set/Get Examples for Int-Type Features
+    # Set the value of the "ExposureTime" feature to 10000
+    ret = novitec_camera.set_feature_value_int("ExposureTime", 10000)
+    if ret.errCode != 0:
+        print(f"Failed to set the 'ExposureTime' feature value: {ret.errMessage}")
+        sys.exit()
+
+    # Get the current value of the "ExposureTime" feature
+    ret, exposure_time = novitec_camera.get_feature_value_int("ExposureTime")
+    if ret.errCode != 0:
+        print(f"Failed to get the 'ExposureTime' feature value: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"The 'ExposureTime' feature value is: {exposure_time}")
+
+    # Get min/max value Examples for Int-Type Features
+    # Retrieve the minimum and maximum allowable values for the "ExposureTime" feature
+    ret, exposure_time_min, exposure_time_max = novitec_camera.get_feature_min_max_value_int("ExposureTime")
+    if ret.errCode != 0:
+        print(f"Failed to get the 'ExposureTime' feature min/max value: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"The 'ExposureTime' feature min/max value is: {exposure_time_min}/{exposure_time_max}")
+
+    # Set/Get Examples for Float-Type Features
+    # Set the value of the "Gain" feature to 2.0
+    ret = novitec_camera.set_feature_value_float("Gain", 2.0)
+    if ret.errCode != 0:
+        print(f"Failed to set the 'Gain' feature value: {ret.errMessage}")
+        sys.exit()
+
+    # Get the current value of the "Gain" feature
+    ret, gain = novitec_camera.get_feature_value_float("Gain")
+    if ret.errCode != 0:
+        print(f"Failed to get the 'Gain' feature value: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"The 'Gain' feature value is: {gain}")
+
+    # Get min/max value Examples for Float-Type Features
+    # Retrieve the minimum and maximum allowable values for the "Gain" feature
+    ret, gain_min, gain_max = novitec_camera.get_feature_min_max_value_float("Gain")
+    if ret.errCode != 0:
+        print(f"Failed to get the 'Gain' feature min/max value: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"The 'Gain' feature min/max value is: {gain_min}/{gain_max}")
+
+    # Set/Get Examples for Enum-Type Features
+    # Set the value of the "TriggerMode" feature to "On"
+    ret = novitec_camera.set_feature_value_enum("TriggerMode", "On")
+    if ret.errCode != 0:
+        print(f"Failed to set the 'TriggerMode' feature value: {ret.errMessage}")
+        sys.exit()
+
+    # Get the current value of the "TriggerMode" feature
+    ret, trigger_mode = novitec_camera.get_feature_value_enum("TriggerMode")
+    if ret.errCode != 0:
+        print(f"Failed to get the 'TriggerMode' feature value: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"The 'TriggerMode' feature value is: {trigger_mode}")
+
+    # Get Examples for String-Type Features
+    # Get the current value of the "DeviceFirmwareVersion" feature
+    ret, device_firmware_version = novitec_camera.get_feature_value_string("DeviceFirmwareVersion")
+    if ret.errCode != 0:
+        print(f"Failed to get the 'DeviceFirmwareVersion' feature value: {ret.errMessage}")
+        sys.exit()
+    else:
+        print(f"The 'DeviceFirmwareVersion' feature value is: {device_firmware_version}")
+
+    # Execute Examples for Command-Type Features
+    # Execute the "TriggerSoftware" command feature
+    ret = novitec_camera.execute_feature("TriggerSoftware")
+    if ret.errCode != 0:
+        print(f"Failed to execute the 'TriggerSoftware' feature: {ret.errMessage}")
+        sys.exit()
